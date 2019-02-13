@@ -20,6 +20,13 @@
           <group colspan="2" col="2">
             <field name="name"/>
             <field name="descripcion"/>
+            <field name="libros">
+                <tree>
+                  <field name="name"/>
+                  <field name="precio"/>
+                  <field name ="ejemplares"/>
+                </tree>
+            </field>
           </group>
         </form>
       </field>
@@ -37,11 +44,12 @@
           <field name="ejemplares"/>
           <field name="segundamano"/>
           <field name="estado"/>
+          <field name="categoria"/>
         </tree>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="libreria.categoria_form">
+    <record model="ir.ui.view" id="libreria.libros_form">
       <field name="name">libreria.libro.form</field>
       <field name="model">libreria.libro</field>
       <field name="arch" type="xml">
