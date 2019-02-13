@@ -1,0 +1,109 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="libreria.categoria_tree">
+      <field name="name">libreria.categoria.tree</field>
+      <field name="model">libreria.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria.categoria_form">
+      <field name="name">libreria.categoria.form</field>
+      <field name="model">libreria.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="descripcion"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Libro views -->
+
+    <record model="ir.ui.view" id="libreria.libros_tree">
+      <field name="name">libreria.libro.tree</field>
+      <field name="model">libreria.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="ejemplares"/>
+          <field name="segundamano"/>
+          <field name="estado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria.categoria_form">
+      <field name="name">libreria.libro.form</field>
+      <field name="model">libreria.libro</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="ejemplares"/>
+            <field name="segundamano"/>
+            <field name="estado"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <!-- Botonoes en una lista desplegable, EL CAMPO ID DEBE TENER COMO MÁXIMO UN PUNTO -->
+
+    <record model="ir.actions.act_window" id="libreria.categoria_action_window">
+      <field name="name">libreria.categoria.action_window</field>
+      <field name="res_model">libreria.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="libreria.libro_action_window">
+      <field name="name">libreria.libro.action_window</field>
+      <field name="res_model">libreria.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="libreria.action_server">
+      <field name="name">libreria server</field>
+      <field name="model_id" ref="model_libreria_libreria"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!-- Top menu item -->
+
+    <menuitem name="Libreria" id="libreria.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Categoria" id="libreria.categoria_menu" parent="libreria.menu_root" action="libreria.categoria_action_window"/>
+    <menuitem name="Libros" id="libreria.libro_menu" parent="libreria.menu_root" action="libreria.libro_action_window"/>
+
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="libreria.menu_1_list" parent="libreria.menu_1"
+              action="libreria.action_window"/>
+    <menuitem name="Server to list" id="libreria" parent="libreria.menu_2"
+              action="libreria.action_server"/>
+    -->
+  </data>
+</odoo>
