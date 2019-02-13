@@ -43,6 +43,7 @@
           <field name="precio"/>
           <field name="ejemplares"/>
           <field name="segundamano"/>
+          <field name="fecha"/>
           <field name="estado"/>
           <field name="categoria"/>
         </tree>
@@ -59,9 +60,24 @@
             <field name="precio"/>
             <field name="ejemplares"/>
             <field name="segundamano"/>
+            <field name="fecha"/>
             <field name="estado"/>
+            <field name="categoria"/>
           </group>
         </form>
+      </field>
+    </record>
+
+    <!-- lista de búsqueda -->
+    <record model="ir.ui.view" id="libreria.libro_search_view">
+      <field name="name">libreria.libro.search</field>
+      <field name="model">libreria.libro</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="categoria" string="Categoría"/>
+          <filter name="baratos" domain="[ ('precio', '&lt;=',5) ]"/>
+        </search>
       </field>
     </record>
 
