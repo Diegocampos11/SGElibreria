@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_libreria_libreria,libreria.libreria,model_libreria_libreria,,1,0,0,0
+categoria_responsable,categoriaresponsable,model_libreria_categoria,libreria_manager,1,1,1,1
+libro_responsable,libroresponsable,model_libreria_libro,libreria_manager,1,1,1,1

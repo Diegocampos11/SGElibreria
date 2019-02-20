@@ -117,12 +117,13 @@
     <!-- Top menu item -->
     <!-- Top menu item -->
 
-    <menuitem name="Libreria" id="libreria.menu_root"/>
+    <!-- añadimos el grupo a los siguientes menuitem -->
+    <menuitem name="Libreria" id="libreria.menu_root" groups="libreria_manager"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Categoria" id="libreria.categoria_menu" parent="libreria.menu_root" action="libreria.categoria_action_window"/>
-    <menuitem name="Libros" id="libreria.libro_menu" parent="libreria.menu_root" action="libreria.libro_action_window"/>
+    <menuitem name="Categoria" id="libreria.categoria_menu" parent="libreria.menu_root" action="libreria.categoria_action_window" groups="libreria_manager"/>
+    <menuitem name="Libros" id="libreria.libro_menu" parent="libreria.menu_root" action="libreria.libro_action_window" groups="libreria_manager"/>
 
     <!-- actions -->
     <!--

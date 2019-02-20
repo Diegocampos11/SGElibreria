@@ -23,11 +23,13 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        #descomentamos el modulo de security, y lo redefinimos
+        'security/security.xml',#PRIMERO EL XML
+        'security/ir.model.access.csv',#LUEGO EL MODEL.ACCESS.CSV
         'views/views.xml',
         'views/templates.xml',
         #añadimos el fichero nuevo creado, que se encuentra en la carpeta reports
-        'reports/report_libro.xml'
+        'reports/report_libro.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
