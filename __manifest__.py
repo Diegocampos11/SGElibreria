@@ -30,6 +30,8 @@
         'views/templates.xml',
         #añadimos el fichero nuevo creado, que se encuentra en la carpeta reports
         'reports/report_libro.xml',
+        #añadimos el data
+        'data/data.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

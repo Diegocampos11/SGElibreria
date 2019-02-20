@@ -1,0 +1,10 @@
+<odoo><!-- generamos los datos que nos de la gana con la siguiente estructura :o -->
+  <data>
+    <record model="libreria.categoria">
+      <field name="name">Novela</field>
+    </record>
+    <record model="libreria.categoria">
+      <field name="name">Tragedia</field>
+    </record>
+  </data>
+</odoo>
