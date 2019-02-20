@@ -1,0 +1,37 @@
+<odoo><!--DEFINIMOS LA ESTRUCTURA/CONTENIDO DEL INFORME escribir linea a linea es lo que recomiendan-->
+  <report
+    id = "libreria.report_libro"
+    model = "libreria.libro"
+    string = "Informe libro"
+    name = "libreria.report_libro_view"
+    file = "libreria.report_libro_view"
+    report_type = "qweb-pdf"
+    /><!-- name template, file el nombre con el que se guardará -->
+  <template id="report_libro_view">
+      <t t-call="report.html_container"><!-- nos permite formatear los campos -->
+        <t t-foreach="docs" t-as="libro"><!-- se crea el objeto libro por cada libro xd -->
+          <t t-call="report.external_layout"><!-- coge el formulario que esta predifinido e imprime la cabezera de la empresa -->
+            <div class="page">
+              <h2 t-field="libro.name" /><!-- formateo el libro.name en un h2 -->
+              <div>
+                <strong>Precio</strong>
+                <span t-field="libro.precio" />
+              </div>
+              <div>
+                <strong>Ejemplares</strong>
+                <span t-field="libro.ejemplares" />
+              </div>
+              <div>
+                <strong>Categoria</strong>
+                <span t-field="libro.categoria" />
+              </div>
+              <!-- SI ES UN CAMPO CON UNA RELACION, AUTORES :O LLAMAMOS A OTRO FOREACH -->
+              <!-- t t-foreach="libro.autores" t-as="autor" -->
+                <!-- strong>Nombre de autor< strong-->
+                <!-- span t-field="autor.nombre" /-->
+            </div>
+          </t>
+        </t>
+      </t>
+  </template>
+</odoo>

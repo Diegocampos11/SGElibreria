@@ -19,3 +19,13 @@ class libreria_libro( models.Model ):
     estado = fields.Selection( [ ("0", 'Bueno'), ('1', 'Regular'), ('2', 'Malo') ], string = "Estado", default = "0" )
     #a una categoria pertenece muchos libros
     categoria = fields.Many2one( 'libreria.categoria', string = 'Categoria', required = True, ondelete = 'cascade' )
+    #añadir campo calculado :D
+    #store true se almacena en la base de datos
+    importetotal = fields.Float( string = 'Importe total', compute = '_importetotal', store = True )
+    @api.depends( 'precio', 'ejemplares' )
+
+    #declaracion de un procedimiento
+    #siempre lleva dos puntos al final de la declaración de una clase, procedimiento, while, for :o
+    def _importetotal( self ):
+        for r in self:
+            r.importetotal = r.ejemplares*r.precio

@@ -63,6 +63,7 @@
             <field name="fecha"/>
             <field name="estado"/>
             <field name="categoria"/>
+            <field name="importetotal"/>
           </group>
         </form>
       </field>
@@ -76,6 +77,7 @@
         <search>
           <field name="name" string="Título"/>
           <field name="categoria" string="Categoría"/>
+          <!-- se añade un filtro a la busqueda pero solo en libros -->
           <filter name="baratos" domain="[ ('precio', '&lt;=',5) ]"/>
         </search>
       </field>
