@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="libreria.categoria">
+      <field name="name">Novela</field>
+    </record>
+    <record model="libreria.categoria">
+      <field name="name">Tragedia</field>
+    </record>
+  </data>
+</odoo>
